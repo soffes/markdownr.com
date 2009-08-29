@@ -3,6 +3,7 @@ class HomeController < ApplicationController
   def process_input
     
     json = {
+      :timestamp => Time.now.to_datetime,
       :html => markdown(params["notepad"])
     }
     

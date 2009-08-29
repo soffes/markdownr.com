@@ -1,1 +1,9 @@
-<p>Hello world</p>
+<div id="content" class="clear">
+  <div id="input">
+    <% form_tag process_url, :id => "notepad_form" do -%>
+      <%= text_area_tag "notepad" %>
+      <%= submit_tag %>
+    <% end -%>    
+  </div>
+  <div id="output"></div>
+</div>

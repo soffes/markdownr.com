@@ -2,23 +2,94 @@
 
 // Clear
 .clear:after
-	clear: both
-	content: " "
-	display: block
-	height: 0
-	zoom: 1
+  clear: both
+  content: " "
+  display: block
+  height: 0
+  zoom: 1
 
 // General
 body
-	background= #ededed
-	font-size: 16px
-	
+  background= #ededed
+  font-size: 15px
+
 body *
-	line-height: 1.4em
+  line-height: 1.4em
 
 body, input, textarea
-	font-family= !HelveticaNeue
-	color: #333
+  font-family= !HelveticaNeue
+  color: #333
 
 a
-	color= !linkColor
+  color= !linkColor
+
+// Home
+div#content
+  width: 640px
+  height: 400px
+  margin: 50px auto
+  > div
+    float: left
+  div#input
+    width: 300px
+    margin-right: 40px
+    textarea
+      width: 300px
+      height: 400px
+      font-family: "Monaco"
+      color: #555
+  div#output
+    width: 278px
+    height: 380px
+    border: 1px solid #999
+    background: #fff
+    padding: 10px
+
+// Markdown
+div.markdown
+  em
+    background-color: #fffeca
+    padding: 0 0.2em
+  abbr
+    border-bottom: 1px dashed
+    cursor: help
+  p
+    line-height: 1.5em
+    margin: 0 0 1em
+  blockquote
+    border-left: 5px solid #ddd
+    color: #555
+    margin: 0 0 1em
+    padding-left: 1em
+    font-family: Baskerville, Palatino, Georgia, serif
+    font-size: 1.2em
+  small
+    font-size: 0.8em
+  pre
+    background-color: #f8f8ff
+    border: 1px solid #dedede
+    color: #444
+    font-size: 0.9em
+    line-height: 1.5em
+    margin: 0 0 2em
+    overflow: auto
+    padding: 0.5em
+    code
+      background-color: #f8f8ff
+      border: medium none
+      font-size: 1em
+      padding: 0
+  code
+    background-color: #f8f8ff
+    border: 1px solid #dedede
+    color: #444
+    font-size: 0.9em
+    padding: 0 0.2em
+  ul, ol
+    margin: 0 0 2em 0.5em
+    li
+      margin-left: 1em
+  ul li
+    list-style: disc
+  ol li
+    list-style: decimal

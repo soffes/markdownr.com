@@ -2,8 +2,7 @@
   <div id="input">
     <% form_tag process_url, :id => "notepad_form" do -%>
       <%= text_area_tag "notepad" %>
-      <%= submit_tag %>
     <% end -%>    
   </div>
-  <div id="output"></div>
+  <div id="output" class="markdown"></div>
 </div>

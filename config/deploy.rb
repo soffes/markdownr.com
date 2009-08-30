@@ -20,6 +20,10 @@ set :git_enable_submodules, 1
 # Tasks
 namespace :deploy do
   
+  task :migrate do
+    #nothing
+  end
+  
   # Restart Passenger
   task :restart do
     run "touch #{current_path}/tmp/restart.txt"

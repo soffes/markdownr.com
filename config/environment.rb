@@ -8,6 +8,10 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
 
+  # Skip frameworks you're not going to use (only works if using vendor/rails).
+  # To use Rails without a database, you must remove the Active Record framework
+  config.frameworks -= [ :active_record, :active_resource, :action_mailer ]
+
   # Specify gems that this application depends on and have them installed with rake gems:install
   config.gem "maruku"
   config.gem "haml", :version => "2.2.2"

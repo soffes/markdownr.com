@@ -4,19 +4,13 @@ require 'maruku'
 
 class ProcessMarkdown
   
-  attr_reader :request
-  
   def self.call(env)
     if env["PATH_INFO"] =~ /^\/process_markdown/
-      @request = Rack::Request.new(env)
-      params = @request.params
-      [200, {"Content-Type" => "text/html"}, ProcessMarkdown.markdown(params["notepad"])]
+      text = Rack::Request.new(env).params["notepad"]
+      output = text.blank? ? "" : Maruku.new(text).to_html
+      [200, {"Content-Type" => "text/html"}, [output]]
     else
       [404, {"Content-Type" => "text/html"}, ["Not Found"]]
     end
-  end
-  
-  def self.markdown(text)
-    text.blank? ? "" : Maruku.new(text).to_html
   end
 end

@@ -45,51 +45,45 @@ div#content
     background: #fff
     padding: 5px
   textarea
-    font-family: "Monaco"
-    color: #555
+    font-family: Monaco, "Courier New", Courier, monospace
+    font-size: 0.9em
 
 // Markdown
-div.markdown
+.markdown
   *
     line-height: 1.4em
   em
     background-color: #fffeca
     padding: 0 0.2em
+  strong
+    font-weight: bold
   abbr
     border-bottom: 1px dashed
     cursor: help
-  p
-    line-height: 1.5em
-    margin: 0 0 1em
-  blockquote
-    border-left: 5px solid #ddd
-    color: #555
-    margin: 0 0 1em
-    padding-left: 1em
-    font-family: Baskerville, Palatino, Georgia, serif
-    font-size: 1.2em
   small
     font-size: 0.8em
-  pre
-    background-color: #f8f8ff
-    border: 1px solid #dedede
-    color: #444
-    font-size: 0.9em
+  h1
+    border-top: 4px solid #aaa
+    font-size: 170%
+    margin-top: 1.5em
+    padding-top: 0.5em
+  h1:first-child
+    border-top: medium none
+    margin-top: 0
+    padding-top: 0.25em
+  h2
+    border-top: 4px solid #E0E0E0
+    font-size: 150%
+    margin-top: 1.5em
+    padding-top: 0.5em
+  h3
+    margin-top: 1em
+  p
     line-height: 1.5em
-    margin: 0 0 2em
-    overflow: auto
-    padding: 0.5em
-    code
-      background-color: #f8f8ff
-      border: medium none
-      font-size: 1em
-      padding: 0
-  code
-    background-color: #f8f8ff
-    border: 1px solid #dedede
-    color: #444
-    font-size: 0.9em
-    padding: 0 0.2em
+    margin: 1em 0
+  ul ul, ol ol
+    margin-bottom: 0
+    margin-top: 0
   ul, ol
     margin: 0 0 2em 0.5em
     li
@@ -98,3 +92,59 @@ div.markdown
     list-style: disc
   ol li
     list-style: decimal
+  blockquote
+    border-left: 5px solid #ddd
+    color: #555
+    margin: 1em 0
+    padding-left: 0.6em
+  dt
+    font-weight: bold
+    margin-left: 1em
+  dd
+    margin-bottom: 1em
+    margin-left: 2em
+  table
+    margin: 1em 0
+    th
+      border-bottom: 1px solid #bbb
+      padding: 0.2em 1em
+    td
+      border-bottom: 1px solid #DDDDDD
+      padding: 0.2em 1em
+  pre
+    background-color: #f8f8ff
+    border: 1px solid #dedede
+    color: #444
+    font-size: 90%
+    line-height: 1.5em
+    margin: 1em 0
+    overflow: auto
+    padding: 0.5em
+    code
+      background-color: #f8f8ff
+      border: medium none
+      font-size: 100%
+      padding: 0
+  code
+    background-color: #f8f8ff
+    border: 1px solid #dedede
+    color: #444
+    font-size: 90%
+    padding: 0 0.2em
+  pre.console
+    background-color: black
+    color: white
+    font-size: 90%
+    line-height: 1.5em
+    margin: 1em 0
+    padding: 0.5em
+    code
+      background-color: black
+      border: medium none
+      color: white
+      font-size: 100%
+      padding: 0
+    span
+      color: #888
+    span.command
+      color: yellow

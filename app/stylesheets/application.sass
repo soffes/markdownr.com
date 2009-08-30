@@ -1,13 +1,5 @@
 @import shared.sass
 
-// Clear
-.clear:after
-  clear: both
-  content: " "
-  display: block
-  height: 0
-  zoom: 1
-
 // General
 body
   background= #ededed
@@ -23,30 +15,43 @@ body, input, textarea
 a
   color= !linkColor
 
+div#copyright
+  +shadow()
+  width: 640px
+  margin: 30px auto
+  color: #aaa
+  font-size: 0.85em
+  a
+    color: #aaa
+    text-decoration: none
+  a:hover
+    color= !linkColor
+    text-decoration: underline
+
 // Home
 div#content
   width: 640px
   height: 400px
-  margin: 50px auto
+  margin: 50px auto 0
   > div
     float: left
   div#input
     width: 300px
     margin-right: 40px
-    textarea
-      width: 300px
-      height: 400px
-      font-family: "Monaco"
-      color: #555
-  div#output
-    width: 278px
-    height: 380px
+  div#output, textarea
+    width: 288px
+    height: 390px
     border: 1px solid #999
     background: #fff
-    padding: 10px
+    padding: 5px
+  textarea
+    font-family: "Monaco"
+    color: #555
 
 // Markdown
 div.markdown
+  *
+    line-height: 1.4em
   em
     background-color: #fffeca
     padding: 0 0.2em

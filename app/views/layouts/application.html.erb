@@ -11,6 +11,10 @@
       <%= content_tag :div, msg, { :class => "flash #{name}" } %>
     <%- end -%>
     <%= yield -%>
+    <div id="copyright">
+      &copy; <a href="http://samsoff.es">Sam Soffes</a> 2009.
+      <a href="http://githhub.com/samsoffes/markdownr.com" rel="external nofollow">View source on GitHub</a>.
+    </div>
     <%= javascript_include_tag :jquery %>
     <%= javascript_include_tag "application" %>
   </body>

@@ -16,6 +16,7 @@ $(function() {
   };
   
   notepad.keyup(process);
+  notepad.focus();
   
   process();
 });

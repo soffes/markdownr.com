@@ -27,6 +27,8 @@ div#copyright
   a:hover
     color= !linkColor
     text-decoration: underline
+  span
+    float: right
 
 // Home
 div#content
@@ -47,6 +49,7 @@ div#content
   textarea
     font-family: Monaco, "Courier New", Courier, monospace
     font-size: 0.9em
+    resize: none
 
 // Markdown
 .markdown
@@ -54,8 +57,10 @@ div#content
     line-height: 1.4em
   em
     background-color: #fffeca
-    padding: 0 0.2em
-  strong
+    padding: 0 0.08em
+  i
+    font-style: italic
+  strong, b
     font-weight: bold
   abbr
     border-bottom: 1px dashed

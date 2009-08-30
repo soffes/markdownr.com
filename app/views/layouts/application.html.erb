@@ -13,9 +13,10 @@
     <%= yield -%>
     <div id="copyright">
       &copy; <a href="http://samsoff.es">Sam Soffes</a> 2009.
-      <a href="http://githhub.com/samsoffes/markdownr.com" rel="external nofollow">View source on GitHub</a>.
+      <a href="http://githhub.com/samsoffes/markdownr.com" rel="external nofollow">View source on GitHub</a>. <span><a href="http://github.com/samsoffes/markdownr.com/blob/master/Readme.markdown" rel="external nofollow">About Markdownr.com</a></span>
     </div>
     <%= javascript_include_tag :jquery %>
-    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "application" -%>
+    <%= google_analytics "UA-5609322-6" %>
   </body>
 </html>

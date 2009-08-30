@@ -9,8 +9,8 @@ $(function() {
     if (notepad.val() == cached_input) {
       return;
     }
-    $.getJSON(form.attr('action'), form.serialize(), function(data, textStatus) {
-      output.html(data.html);
+    $.get(form.attr('action'), form.serialize(), function(data, textStatus) {
+      output.html(data);
       cached_input = notepad.val();
     });
   };

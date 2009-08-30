@@ -1,6 +1,6 @@
 <div id="content" class="clear">
   <div id="input">
-    <% form_tag process_url, :id => "notepad_form" do -%>
+    <% form_tag "/process_markdown", :id => "notepad_form" do -%>
       <%= text_area_tag "notepad" %>
     <% end -%>    
   </div>

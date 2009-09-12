@@ -1,0 +1,8 @@
+<div id="content" class="clear">
+  <div id="input">
+    <% form_tag "/process_markdown", :id => "notepad_form" do -%>
+      <%= text_area_tag "notepad", "Welcome to [Markdownr.com](http://markdownr.com). We hope you *really* enjoy using this.\n\nJust type some [markdown](http://daringfireball.net/projects/markdown) on the left and see it on the right. *Simple as that.*" %>
+    <% end -%>    
+  </div>
+  <div id="output" class="markdown"><p>Welcome to <a href='http://markdownr.com'>Markdownr.com</a>. We hope you <em>really</em> enjoy using this.</p><p>Just type some <a href='http://daringfireball.net/projects/markdown'>markdown</a> on the left and see it on the right. <em>Simple as that.</em></p></div>
+</div>

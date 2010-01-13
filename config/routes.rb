@@ -1,11 +1,6 @@
 Markdownr::Application.routes.draw do |map|
 
-  match "/process_markdown", :to => proc { |env|
-    text = Rack::Request.new(env).params["notepad"]
-    output = text.blank? ? "" : RDiscount.new(text).to_html
-    [200, {}, output]
-  }
-
+  match "/process_markdown", :to => "markdownr#process_markdown"
   root :to => "home#index"
 
 end

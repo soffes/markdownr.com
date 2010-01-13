@@ -2,9 +2,9 @@ clear_sources
 source "http://gemcutter.org"
 
 # Edge Rails
-git "git://github.com/rails/arel.git"
-git "git://github.com/rails/rack.git"
 gem "rails", :git => "git://github.com/rails/rails.git"
+# directory "/Users/samsoffes/Desktop/rails", :glob => "{*/,}*.gemspec"
+# gem "rails", "3.0.pre"
 
 # Gems
 gem "rdiscount", "1.5.5"
@@ -19,4 +19,4 @@ only [:staging, :production] do
   gem "rack-cache", "0.5.2", :require_as => "rack/cache"
 end
 
-disable_system_gems
+# disable_system_gems

@@ -1,5 +1,7 @@
 .DS_Store
-tmp
+tmp/**/*
 log/*.log
 db/*.sqlite3
 .sass-cache
+bin
+vendor/gems

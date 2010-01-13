@@ -1,3 +1,6 @@
 #!/usr/bin/env ruby
 require File.expand_path('../../config/boot',  __FILE__)
-require 'commands/dbconsole'
+require 'rails/commands/dbconsole'
+require File.expand_path('../../config/application',  __FILE__)
+
+Rails::DBConsole.start(Markdownr::Application.instance)

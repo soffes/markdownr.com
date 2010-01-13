@@ -4,7 +4,7 @@ source "http://gemcutter.org"
 # Edge Rails
 git "git://github.com/rails/arel.git"
 git "git://github.com/rails/rack.git"
-gem "rails", "3.0.pre", :git => "git://github.com/rails/rails.git"
+gem "rails", :git => "git://github.com/rails/rails.git"
 
 # Gems
 gem "rdiscount", "1.5.5"

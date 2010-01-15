@@ -30,6 +30,10 @@ body, input, textarea
 
 a
   color= !linkColor
+  text-decoration: none
+
+a:hover
+  text-decoration: underline
 
 div#copyright
   +shadow()
@@ -39,10 +43,8 @@ div#copyright
   font-size: 0.85em
   a
     color: #aaa
-    text-decoration: none
   a:hover
     color= !linkColor
-    text-decoration: underline
   div
     float: right
 
@@ -57,7 +59,7 @@ div#content
   div#input
     width: 300px
     margin-right: 40px
-  div#output, textarea
+  div#markdown-output, textarea
     width: 288px
     height: 390px
     border: 1px solid #999
@@ -68,6 +70,8 @@ div#content
     font-family: Monaco, "Courier New", Courier, monospace
     font-size: 0.9em
     resize: none
+  textarea#html-output
+    display: none
 
 div#loading
   display: none
@@ -77,6 +81,12 @@ div#loading
   position: absolute
   bottom: -18px
   left: 340px
+
+a#toggle-output
+  font-size: 0.8em
+  position: absolute
+  bottom: -22px
+  right: 0
 
 // Markdown
 .markdown
@@ -114,6 +124,8 @@ div#loading
   h6
     color: #777
     font-size: 90%
+  a
+    text-decoration: underline
   p
     line-height: 1.5em
     margin: 0 0 1em

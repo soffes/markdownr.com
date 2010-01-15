@@ -1,1 +1,0 @@
-rdiscount --version >= 1.5.5 --source http://gemcutter.org

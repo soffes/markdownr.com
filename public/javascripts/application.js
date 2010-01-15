@@ -16,7 +16,7 @@ $(function() {
       return;
     }
     loading.show();
-    $.get(form.attr('action'), form.serialize(), function(data, textStatus) {
+    $.post(form.attr('action'), form.serialize(), function(data, textStatus) {
       markdown_output.html(data);
       html_output.val(data);
       loading.fadeOut(100);

@@ -1,10 +1,31 @@
-# Add your own tasks in files placed in lib/tasks ending in .rake,
-# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
+desc "Install gems that this app depends on. May need to be run with sudo."
+namespace :gems do
+  
+  desc "Install necessary gems"
+  task :install do
+    dependencies = [
+      "sinatra --version >= 0.9.4",
+      "rdiscount --version >= 1.5.5",
+      "haml --version >= 2.2.17",
+      "compass --version >= 0.8.17",
+      "shotgun --version >=0.4"
+    ]
+    dependencies.each do |dependency|
+      command = "gem install #{dependency} --source http://gemcutter.org -q"
+      puts command
+      system command
+    end
+  end
+end
 
-require File.expand_path('../config/application', __FILE__)
+namespace :compass do
+  desc "Start Compass watching the SASS directory"
+  task :watch do
+    system "compass -w -c compass.rb"
+  end
+end
 
-require 'rake'
-require 'rake/testtask'
-require 'rake/rdoctask'
-
-Markdownr::Application.load_tasks
+desc "Start local server"
+task :server do
+  system "shotgun markdownr.rb"
+end

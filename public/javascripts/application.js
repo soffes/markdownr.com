@@ -16,11 +16,12 @@ $(function() {
       return;
     }
     loading.show();
+    var pre_cache = notepad.val();
     $.post(form.attr('action'), form.serialize(), function(data, textStatus) {
       markdown_output.html(data);
       html_output.val(data);
       loading.fadeOut(100);
-      cached_input = notepad.val();
+      cached_input = pre_cache;
     });
   };
   

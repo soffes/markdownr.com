@@ -1,6 +1,6 @@
 $(function() {
   
-  var cached_input = "Welcome to [Markdownr.com](http://markdownr.com). We hope you *really* enjoy using this.\n\nJust type some [markdown](http://daringfireball.net/projects/markdown) on the left and see it on the right. **Simple as that.**";
+  var cached_input = "Welcome to [Markdownr.com](http://markdownr.com). We hope you **really** enjoy using this.\n\nJust type some [markdown](http://daringfireball.net/projects/markdown) on the left and see it on the right. *Simple as that.*";
   var show_html = false;
   
   var form = $('form#notepad_form');

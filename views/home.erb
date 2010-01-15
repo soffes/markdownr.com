@@ -1,13 +1,31 @@
-<div id="content" class="clear">
-  <div id="input">
-    <form action="/process" id="notepad_form" method="post">
-      <textarea id="notepad" name="notepad">Welcome to [Markdownr.com](http://markdownr.com). We hope you **really** enjoy using this.
-
-Just type some [markdown](http://daringfireball.net/projects/markdown) on the left and see it on the right. *Simple as that.*</textarea>
-    </form>
-  </div>
-  <div id="markdown-output" class="markdown"><p>Welcome to <a href="http://markdownr.com">Markdownr.com</a>. We hope you <strong>really</strong> enjoy using this.</p><p>Just type some <a href="http://daringfireball.net/projects/markdown">markdown</a> on the left and see it on the right. <em>Simple as that.</em></p></div>
-  <textarea id="html-output">&lt;p&gt;Welcome to &lt;a href="http://markdownr.com"&gt;Markdownr.com&lt;/a&gt;. We hope you &lt;strong&gt;really&lt;/strong&gt; enjoy using this.&lt;/p&gt;&lt;p&gt;Just type some &lt;a href="http://daringfireball.net/projects/markdown"&gt;markdown&lt;/a&gt; on the left and see it on the right. &lt;em&gt;Simple as that.&lt;/em&gt;&lt;/p&gt;</textarea>
-  <div id="loading"></div>
-  <a id="toggle-output" href="javascript:;">Show HTML</a>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>Markdownr</title>
+    <style type="text/css"><%= stylesheet %></style>
+    <script>var _gaq=_gaq || [];_gaq.push(['_setAccount','UA-5609322-6']);_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.async=true;ga.src=('https:'==document.location.protocol?'https://ssl':'http://www')+'.google-analytics.com/ga.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);})();</script>
+  </head>
+  <body>
+    <div id="content" class="clear">
+      <div id="input">
+        <form action="/process" id="notepad_form" method="post">
+          <textarea id="notepad" name="notepad"><%= default_markdown %></textarea>
+        </form>
+      </div>
+      <div id="markdown-output" class="markdown"><%= default_html %></div>
+      <textarea id="html-output"><%= h default_html %></textarea>
+      <div id="loading"></div>
+      <a id="toggle-output" href="javascript:;">Show HTML</a>
+    </div>
+    <div id="copyright">
+      &copy; <a href="http://samsoff.es">Sam Soffes</a> 2009-2010.
+      <a href="http://github.com/samsoffes/markdownr.com" rel="external nofollow">View source on GitHub</a>.
+      <div>
+        <a class="about" href="http://github.com/samsoffes/markdownr.com/blob/master/Readme.markdown" rel="external nofollow">About Markdownr.com</a>
+      </div>
+    </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+    <script type="text/javascript"><%= javascript %></script>
+  </body>
+</html>

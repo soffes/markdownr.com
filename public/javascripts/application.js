@@ -1,14 +1,14 @@
 $(function() {
   
-  var cached_input = "Welcome to [Markdownr.com](http://markdownr.com). We hope you **really** enjoy using this.\n\nJust type some [markdown](http://daringfireball.net/projects/markdown) on the left and see it on the right. *Simple as that.*";
-  var show_html = false;
-  
   var form = $('form#notepad_form');
   var notepad = $('textarea#notepad');
   var markdown_output = $('div#markdown-output');
   var html_output = $('textarea#html-output');
   var toggle_output = $('a#toggle-output');
   var loading = $('div#loading');
+  
+  var cached_input = notepad.val();
+  var show_html = false;
   
   // Process markdown
   var process = function() {

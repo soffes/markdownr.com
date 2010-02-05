@@ -1,7 +1,10 @@
-clear_sources
-source "http://gemcutter.org"
+source :gemcutter
  
 gem "sinatra", "0.9.4"
 gem "rdiscount", "1.5.8"
 
-gem "rack-cache", :require_as => "rack/cache"
+group :development do
+  gem "shotgun", "0.6"
+end
+
+# gem "rack-cache", :require => "rack/cache"

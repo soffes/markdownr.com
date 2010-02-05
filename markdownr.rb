@@ -6,6 +6,7 @@ rescue LoadError
   require "bundler"
   Bundler.setup
 end
+Bundler.require
 
 class Markdownr < Sinatra::Default
   set :app_file, __FILE__

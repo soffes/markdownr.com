@@ -1,12 +1,6 @@
 # Bundler
-begin
-  require File.expand_path('../.bundle/environment', __FILE__)
-rescue LoadError
-  require "rubygems"
-  require "bundler"
-  Bundler.setup
-end
-Bundler.require
+require File.expand_path(File.join(File.dirname(__FILE__), 'vendor', 'gems', 'environment'))
+Bundler.require_env
 
 class Markdownr < Sinatra::Default
   set :app_file, __FILE__

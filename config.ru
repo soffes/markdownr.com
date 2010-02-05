@@ -1,2 +1,2 @@
 require 'markdownr'
-run Sinatra::Application
+run Markdownr

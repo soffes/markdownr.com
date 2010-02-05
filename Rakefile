@@ -21,7 +21,7 @@ end
 namespace :compass do
   desc "Start Compass watching the SASS directory"
   task :watch do
-    system "compass -w -c compass.rb"
+    system "compass -w -c config/compass.rb"
   end
 end
 

@@ -1,2 +1,4 @@
 .DS_Store
 .sass-cache
+bin
+vendor/gems

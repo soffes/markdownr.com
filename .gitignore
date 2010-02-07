@@ -1,7 +1,4 @@
-.DS_Store
-tmp/**/*
-log/*.log
+.bundle
 db/*.sqlite3
-.sass-cache
-bin
-vendor/gems
+log/*.log
+tmp/**/*

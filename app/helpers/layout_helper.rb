@@ -17,13 +17,8 @@ module LayoutHelper
     content_for(:head) { javascript_include_tag(*args) }
   end
   
-  def google_analytics(id, always = false)
-    # By default, only return Google Analytics code if in production
-    # This can be overridden but passing true for the second argument
-    (always || ENV['RAILS_ENV'] == 'production') ? "<script type=\"text/javascript\">var gaJsHost=((\"https:\"==document.location.protocol)?\"https://ssl.\":\"http://www.\");document.write(unescape(\"%3Cscript src='\"+gaJsHost+\"google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E\"));</script><script type=\"text/javascript\">try{var pageTracker=_gat._getTracker(\"#{id}\");pageTracker._trackPageview();}catch(err){}</script>" : ""
-  end
-  
-  def quantcast(id, always = false)
-    (always || ENV['RAILS_ENV'] == 'production') ? "<script type=\"text/javascript\">_qoptions={qacct:\"#{id}\"};</script><script type=\"text/javascript\" src=\"http://edge.quantserve.com/quant.js\"></script><noscript><img src=\"http://pixel.quantserve.com/pixel/#{id}.gif\" style=\"display:none\" border=\"0\" height=\"1\" width=\"1\" alt=\"Quantcast\"/></noscript>" : ""
+  def google_analytics(account, always = false)
+    # This helper should be called at end of the <head> tab
+    "<script>var _gaq=_gaq || [];_gaq.push(['_setAccount','#{account}']);_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.async=true;ga.src=('https:'==document.location.protocol?'https://ssl':'http://www')+'.google-analytics.com/ga.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);})();</script>" if (always || Rails.env.to_sym == :production)
   end
 end

@@ -1,4 +1,4 @@
-class MarkdownrController < ActionController::Metal
+class MarkdownController < ActionController::Metal
   include ActionController::RackDelegation
   
   def process_markdown

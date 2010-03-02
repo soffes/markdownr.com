@@ -1,11 +1,12 @@
-clear_sources
-source "http://gemcutter.org"
- 
-gem "sinatra", "0.9.4"
+source :gemcutter
+
+gem "rails", "3.0.0.beta"
 gem "rdiscount", "1.5.8"
+gem "compass", "0.10.0.pre8"
 
-only :development do
-  gem "shotgun", "0.6"
+group :test do
+  gem "rspec", "2.0.0.a5"
+  gem "rspec-rails", "2.0.0.a5"
 end
-
-gem "rack-cache", :require_as => "rack/cache"
+ 
+gem "rack-cache", :require => "rack/cache"

@@ -1,0 +1,25 @@
+@import compass/reset
+@import shared
+
+div#input, textarea#html-output, div#loading, a#toggle-output, div#copyright
+  display: none
+
+a, a:visited
+  color: #00f
+
+html, body, div#content, div#content div#markdown-output
+  width: auto
+
+body
+  font-family= !HelveticaNeue
+
+div#markdown-output
+  float: none
+  margin: 0
+  padding: 0
+  border: 0
+  overflow: hidden
+  +markdown_style()
+
+  pre
+    overflow: hidden

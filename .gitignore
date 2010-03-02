@@ -4,4 +4,7 @@ bin
 vendor/gems
 vendor/cache
 .bundle
-Gemfile.lock
+db/*.sqlite3
+log/*.log
+tmp/**/*
+.sass-cache

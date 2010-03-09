@@ -6,7 +6,7 @@ Feel free to visit [Markdownr.com][] or fork and improve.
 
 ## Thanks
 
-Huge thanks to [Yehuda Katz](http://yehudakatz.com) for all of explanations, answers to my dumb questions, and simply being awesome.
+Huge thanks to [Yehuda Katz](http://yehudakatz.com) for all of explanations, answers to my dumb questions, and simply being awesome. Thanks to everyone who has opened issues or emailed me ideas for improvement.
 
 [Markdownr.com]: http://markdownr.com
 [markdown]: http://daringfireball.net/projects/markdown

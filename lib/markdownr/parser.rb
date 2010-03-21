@@ -32,7 +32,8 @@ module Markdownr
         end
         
         # Replace `href="javascript:"` stuff
-        match.gsub!(/href(\s*=\s*(?:"javascript:[^"]*?"|'javascript:[^']*?'|javascript:[^'">\s]+))/, 'href="#"')
+        match.gsub!(/href(\s*=\s*(?:"javascript:[^"]*?"|'javascript:[^']*?'|javascript:[^'">\s]+))/, 'href="javascript:;"')
+        match
       end
           
       # Remove <script>

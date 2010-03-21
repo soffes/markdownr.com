@@ -1,15 +1,14 @@
-require 'rdiscount'
+require "markdownr/parser"
  
 class ApplicationController < ActionController::Base
   helper :all
-  protect_from_forgery
+  protect_from_forgery 
   
   helper_method :markdown
   
-  private
+  protected
   
   def markdown(text)
-    text.blank? ? "" : RDiscount.new(text).to_html
-  end
-  
+    Markdownr::Parser.parse(text)
+  end 
 end

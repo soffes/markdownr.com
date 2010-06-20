@@ -11,25 +11,25 @@
 
 // General
 body
-  background= #ededed
+  background: #ededed
   font-size: 15px
 
 body *
   line-height: 1.4em
 
 body, input, textarea
-  font-family= !HelveticaNeue
+  font-family: $HelveticaNeue
   color: #333
 
 a
-  color= !linkColor
+  color: $linkColor
   text-decoration: none
 
 a:hover
   text-decoration: underline
 
 div#copyright
-  +shadow()
+  +shadow
   width: 640px
   margin: 30px auto
   color: #aaa
@@ -37,7 +37,7 @@ div#copyright
   a
     color: #aaa
   a:hover
-    color= !linkColor
+    color: $linkColor
   div
     float: right
 
@@ -70,7 +70,7 @@ div#loading
   display: none
   width: 21px
   height: 5px
-  background= image_url("dots-white.gif") "no-repeat"
+  background: image_url('dots-white.gif') no-repeat
   position: absolute
   bottom: -18px
   left: 340px
@@ -83,4 +83,4 @@ a#toggle-output
 
 // Markdown
 .markdown
-  +markdown_style()
+  +markdown_style

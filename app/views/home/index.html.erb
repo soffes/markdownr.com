@@ -1,9 +1,10 @@
 <div id="input">
   <form action="<%= process_markdown_url %>" id="notepad_form" method="post">
-    <textarea id="notepad" name="notepad"><%= @default_markdown %></textarea>
+    <textarea id="notepad" name="text"><%= @default_raw %></textarea>
+    <span id="parser-container">Use <%= parser_select @default %></span>
   </form>
 </div>
-<div id="markdown-output" class="markdown"><%= raw(@default_html) %></div>
+<div id="output" class="markdown"><%= raw(@default_html) %></div>
 <textarea id="html-output"><%= @default_html %></textarea>
 <div id="loading"></div>
 <a id="toggle-output" href="javascript:;">Show HTML</a>

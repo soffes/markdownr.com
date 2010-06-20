@@ -10,6 +10,9 @@
   zoom: 1
 
 // General
+html
+  background: #ededed
+
 body
   background: #ededed
   font-size: 15px
@@ -31,7 +34,7 @@ a:hover
 div#copyright
   +shadow
   width: 640px
-  margin: 30px auto
+  margin: 40px auto 30px
   color: #aaa
   font-size: 0.85em
   a
@@ -52,7 +55,7 @@ div#content
   div#input
     width: 300px
     margin-right: 40px
-  div#markdown-output, textarea
+  div#output, textarea
     width: 288px
     height: 390px
     border: 1px solid #999
@@ -66,20 +69,27 @@ div#content
   textarea#html-output
     display: none
 
+span#parser-container
+  position: absolute
+  bottom: -32px
+  left: -2px
+  color: #444
+  font-size: 0.8em
+
 div#loading
   display: none
   width: 21px
   height: 5px
   background: image_url('dots-white.gif') no-repeat
   position: absolute
-  bottom: -18px
+  bottom: -23px
   left: 340px
   -webkit-transition: all 0.1s linear
 
 a#toggle-output
   font-size: 0.8em
   position: absolute
-  bottom: -22px
+  bottom: -27px
   right: 0
 
 // Markdown

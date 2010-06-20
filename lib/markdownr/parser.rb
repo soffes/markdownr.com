@@ -1,15 +1,25 @@
-require "rdiscount"
 require "digest/md5"
 
 module Markdownr
   class Parser
-    def self.parse(text)
+    PARSERS = ["Markdown", "Textile", "RDoc"].freeze
+    
+    def self.parse(text, parser = "markdown")
       return "" unless text && !text.empty?
       
+      # Strip evil stuff
       text = preprocess(text)
       
       # Parse!
-      RDiscount.new(text).to_html
+      case parser
+      when "textile"
+        RedCloth.new(text).to_html
+      when "rdoc"
+        require "rdoc/markup/to_html"
+        RDoc::Markup::ToHtml.new.convert(text)
+      else
+        RDiscount.new(text).to_html
+      end
     end
     
     def self.preprocess(text)

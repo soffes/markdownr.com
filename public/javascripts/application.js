@@ -1,16 +1,12 @@
-// ==ClosureCompiler==
-// @output_file_name default.js
-// @compilation_level ADVANCED_OPTIMIZATIONS
-// ==/ClosureCompiler==
-
 $(function() {
   
   var form = $('form#notepad_form');
   var notepad = $('textarea#notepad');
-  var markdown_output = $('div#markdown-output');
+  var output = $('div#output');
   var html_output = $('textarea#html-output');
   var toggle_output = $('a#toggle-output');
   var loading = $('div#loading');
+  var parser_select = $('select#parser');
   
   var cached_input = notepad.val();
   var show_html = false;
@@ -23,11 +19,20 @@ $(function() {
     loading.show();
     var pre_cache = notepad.val();
     $.post(form.attr('action'), form.serialize(), function(data, textStatus) {
-      markdown_output.html(data);
+      output.html(data);
       html_output.val(data);
       loading.hide();
       cached_input = pre_cache;
     });
+  };
+  
+  // Parser change
+  var parser_change = function() {
+    // TODO: update default if it is still the default text
+    cached_input = '';
+    
+    // Reprocess
+    process();
   };
   
   // Toggle output
@@ -37,11 +42,11 @@ $(function() {
     
     if (show_html) {
       toggle_output.html('Hide HTML');
-      markdown_output.hide();
+      output.hide();
       html_output.show();
     } else {
       toggle_output.html('Show HTML');
-      markdown_output.show();
+      output.show();
       html_output.hide();
     }
   };
@@ -49,6 +54,9 @@ $(function() {
   // Add event for keyup and focus
   notepad.keyup(process);
   notepad.focus();
+  
+  // Add event for parser change
+  parser_select.change(parser_change);
   
   // Add event for toggle link
   toggle_output.click(toggle);

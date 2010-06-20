@@ -1,3 +1,8 @@
+// ==ClosureCompiler==
+// @output_file_name default.js
+// @compilation_level ADVANCED_OPTIMIZATIONS
+// ==/ClosureCompiler==
+
 $(function() {
   
   var form = $('form#notepad_form');
@@ -20,7 +25,7 @@ $(function() {
     $.post(form.attr('action'), form.serialize(), function(data, textStatus) {
       markdown_output.html(data);
       html_output.val(data);
-      loading.fadeOut(100);
+      loading.hide();
       cached_input = pre_cache;
     });
   };

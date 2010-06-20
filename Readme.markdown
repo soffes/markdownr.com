@@ -1,8 +1,10 @@
 # Markdownr.com
 
-[Markdownr.com][] is a simple website for previewing [markdown][] on the fly. [Markdownr.com][] uses the [RDiscount](http://github.com/rtomayko/rdiscount) library to parse [markdown][] input. All parsing is done inside of a Rails 3 metal controller, so it is very fast. Styles inspired by [GitHub](http://github.com).
+[Markdownr.com][] is a simple website for previewing [markdown][] on the fly. [Markdownr.com][] uses the [RDiscount](http://github.com/rtomayko/rdiscount) library to parse [markdown][] input. All parsing is done inside of a Rails 3 metal controller, so it is very fast. Some styles were inspired by [GitHub](http://github.com).
 
-Feel free to visit [Markdownr.com][] or fork and improve.
+[Markdownr.com][] now supports [Textile](http://redcloth.org/) and [RDoc](http://rdoc.rubyforge.org/). I'm currently working on improving support for these and other languages.
+
+Feel free to visit [Markdownr.com][] or to fork and improve.
 
 ## Thanks
 

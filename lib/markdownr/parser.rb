@@ -2,7 +2,24 @@ require "digest/md5"
 
 module Markdownr
   class Parser
-    PARSERS = ["Markdown", "Textile", "RDoc"].freeze
+    PARSERS = [
+      {
+        :name => "Markdown",
+        :parsers => ["RDiscount", "BlueCloth", "Kramdown", "Maruku"]
+      },
+      {
+        :name => "Textile",
+        :parsers => ["RedCloth"]
+      },
+      {
+        :name => "RDoc",
+        :parsers => ["RDoc"]
+      },
+      {
+        :name => "Wiki",
+        :parsers => ["Wikitext"]
+      }
+    ]
     
     def self.parse(text, parser = "markdown")
       return "" unless text && !text.empty?
@@ -12,11 +29,19 @@ module Markdownr
       
       # Parse!
       case parser
-      when "textile"
+      when "bluecloth"
+        BlueCloth.new(text).to_html
+      when "kramdown"
+        Kramdown::Document.new(text).to_html
+      when "maruku"
+        Maruku.new(text).to_html
+      when "redcloth"
         RedCloth.new(text).to_html
       when "rdoc"
         require "rdoc/markup/to_html"
         RDoc::Markup::ToHtml.new.convert(text)
+      when "wikitext"
+        Wikitext::Parser.new.parse(text)
       else
         RDiscount.new(text).to_html
       end

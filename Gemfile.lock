@@ -25,11 +25,11 @@ dependencies:
   rspec: 
     group: 
     - :test
-    version: = 2.0.0.beta.12
+    version: = 2.0.0.beta.15
   rspec-rails: 
     group: 
     - :test
-    version: = 2.0.0.beta.12
+    version: = 2.0.0.beta.15
   wikitext: 
     group: 
     - :default
@@ -49,7 +49,7 @@ dependencies:
   kramdown: 
     group: 
     - :default
-    version: = 0.8.0
+    version: = 0.9.0
 specs: 
 - rake: 
     version: 0.8.7
@@ -104,7 +104,7 @@ specs:
 - diff-lcs: 
     version: 1.1.2
 - kramdown: 
-    version: 0.8.0
+    version: 0.9.0
 - syntax: 
     version: 1.0.0
 - maruku: 
@@ -124,20 +124,20 @@ specs:
 - rdoc: 
     version: 2.5.8
 - rspec-core: 
-    version: 2.0.0.beta.12
+    version: 2.0.0.beta.15
 - rspec-expectations: 
-    version: 2.0.0.beta.12
+    version: 2.0.0.beta.15
 - rspec-mocks: 
-    version: 2.0.0.beta.12
+    version: 2.0.0.beta.15
 - rspec: 
-    version: 2.0.0.beta.12
+    version: 2.0.0.beta.15
 - webrat: 
     version: 0.7.1
 - rspec-rails: 
-    version: 2.0.0.beta.12
+    version: 2.0.0.beta.15
 - wikitext: 
     version: "2.0"
-hash: d366e567b24c325bdb749c9f82b2bca564c2a338
+hash: de9ff36a9fca214094d8ca455707c7dd03e63880
 sources: 
 - Rubygems: 
     uri: http://rubygems.org

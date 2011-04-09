@@ -1,4 +1,4 @@
-require "markdownr/parser"
+require 'markdownr/parser'
 
 class MarkdownController < ActionController::Metal
   include ActionController::RackDelegation

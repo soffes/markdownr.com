@@ -1,143 +1,111 @@
---- 
-dependencies: 
-  compass: 
-    group: 
-    - :default
-    version: = 0.10.2
-  maruku: 
-    group: 
-    - :default
-    version: = 0.6.0
-  rails: 
-    group: 
-    - :default
-    version: = 3.0.0.beta4
-  bluecloth: 
-    group: 
-    - :default
-    version: = 2.0.7
-  rack-cache: 
-    group: 
-    - :default
-    version: ">= 0"
-    require: 
-    - rack/cache
-  rspec: 
-    group: 
-    - :test
-    version: = 2.0.0.beta.15
-  rspec-rails: 
-    group: 
-    - :test
-    version: = 2.0.0.beta.15
-  wikitext: 
-    group: 
-    - :default
-    version: = 2.0
-  rdiscount: 
-    group: 
-    - :default
-    version: = 1.6.5
-  RedCloth: 
-    group: 
-    - :default
-    version: = 4.2.3
-  rdoc: 
-    group: 
-    - :default
-    version: = 2.5.8
-  kramdown: 
-    group: 
-    - :default
-    version: = 0.9.0
-specs: 
-- rake: 
-    version: 0.8.7
-- RedCloth: 
-    version: 4.2.3
-- abstract: 
-    version: 1.0.0
-- activesupport: 
-    version: 3.0.0.beta4
-- builder: 
-    version: 2.1.2
-- i18n: 
-    version: 0.4.1
-- activemodel: 
-    version: 3.0.0.beta4
-- erubis: 
-    version: 2.6.6
-- rack: 
-    version: 1.1.0
-- rack-mount: 
-    version: 0.6.6
-- rack-test: 
-    version: 0.5.4
-- tzinfo: 
-    version: 0.3.22
-- actionpack: 
-    version: 3.0.0.beta4
-- mime-types: 
-    version: "1.16"
-- polyglot: 
-    version: 0.3.1
-- treetop: 
-    version: 1.4.8
-- mail: 
-    version: 2.2.5
-- actionmailer: 
-    version: 3.0.0.beta4
-- arel: 
-    version: 0.4.0
-- activerecord: 
-    version: 3.0.0.beta4
-- activeresource: 
-    version: 3.0.0.beta4
-- bluecloth: 
-    version: 2.0.7
-- bundler: 
-    version: 0.9.26
-- haml: 
-    version: 3.0.13
-- compass: 
-    version: 0.10.2
-- diff-lcs: 
-    version: 1.1.2
-- kramdown: 
-    version: 0.9.0
-- syntax: 
-    version: 1.0.0
-- maruku: 
-    version: 0.6.0
-- nokogiri: 
-    version: 1.4.2
-- rack-cache: 
-    version: 0.5.2
-- thor: 
-    version: 0.13.7
-- railties: 
-    version: 3.0.0.beta4
-- rails: 
-    version: 3.0.0.beta4
-- rdiscount: 
-    version: 1.6.5
-- rdoc: 
-    version: 2.5.8
-- rspec-core: 
-    version: 2.0.0.beta.15
-- rspec-expectations: 
-    version: 2.0.0.beta.15
-- rspec-mocks: 
-    version: 2.0.0.beta.15
-- rspec: 
-    version: 2.0.0.beta.15
-- webrat: 
-    version: 0.7.1
-- rspec-rails: 
-    version: 2.0.0.beta.15
-- wikitext: 
-    version: "2.0"
-hash: de9ff36a9fca214094d8ca455707c7dd03e63880
-sources: 
-- Rubygems: 
-    uri: http://rubygems.org
+GEM
+  remote: http://rubygems.org/
+  specs:
+    RedCloth (4.2.7)
+    abstract (1.0.0)
+    actionmailer (3.0.6)
+      actionpack (= 3.0.6)
+      mail (~> 2.2.15)
+    actionpack (3.0.6)
+      activemodel (= 3.0.6)
+      activesupport (= 3.0.6)
+      builder (~> 2.1.2)
+      erubis (~> 2.6.6)
+      i18n (~> 0.5.0)
+      rack (~> 1.2.1)
+      rack-mount (~> 0.6.14)
+      rack-test (~> 0.5.7)
+      tzinfo (~> 0.3.23)
+    activemodel (3.0.6)
+      activesupport (= 3.0.6)
+      builder (~> 2.1.2)
+      i18n (~> 0.5.0)
+    activerecord (3.0.6)
+      activemodel (= 3.0.6)
+      activesupport (= 3.0.6)
+      arel (~> 2.0.2)
+      tzinfo (~> 0.3.23)
+    activeresource (3.0.6)
+      activemodel (= 3.0.6)
+      activesupport (= 3.0.6)
+    activesupport (3.0.6)
+    arel (2.0.9)
+    bluecloth (2.1.0)
+    builder (2.1.2)
+    chunky_png (1.1.0)
+    compass (0.11.beta.5)
+      chunky_png (~> 1.1.0)
+      sass (>= 3.1.0.alpha.249)
+    diff-lcs (1.1.2)
+    erubis (2.6.6)
+      abstract (>= 1.0.0)
+    i18n (0.5.0)
+    kramdown (0.13.2)
+    mail (2.2.15)
+      activesupport (>= 2.3.6)
+      i18n (>= 0.4.0)
+      mime-types (~> 1.16)
+      treetop (~> 1.4.8)
+    maruku (0.6.0)
+      syntax (>= 1.0.0)
+    mime-types (1.16)
+    polyglot (0.3.1)
+    rack (1.2.2)
+    rack-cache (1.0)
+      rack (>= 0.4)
+    rack-mount (0.6.14)
+      rack (>= 1.0.0)
+    rack-test (0.5.7)
+      rack (>= 1.0)
+    rails (3.0.6)
+      actionmailer (= 3.0.6)
+      actionpack (= 3.0.6)
+      activerecord (= 3.0.6)
+      activeresource (= 3.0.6)
+      activesupport (= 3.0.6)
+      bundler (~> 1.0)
+      railties (= 3.0.6)
+    railties (3.0.6)
+      actionpack (= 3.0.6)
+      activesupport (= 3.0.6)
+      rake (>= 0.8.7)
+      thor (~> 0.14.4)
+    rake (0.8.7)
+    rdiscount (1.6.8)
+    rdoc (3.5.3)
+    rspec (2.5.0)
+      rspec-core (~> 2.5.0)
+      rspec-expectations (~> 2.5.0)
+      rspec-mocks (~> 2.5.0)
+    rspec-core (2.5.1)
+    rspec-expectations (2.5.0)
+      diff-lcs (~> 1.1.2)
+    rspec-mocks (2.5.0)
+    rspec-rails (2.5.0)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      railties (~> 3.0)
+      rspec (~> 2.5.0)
+    sass (3.1.0.alpha.252)
+    syntax (1.0.0)
+    thor (0.14.6)
+    treetop (1.4.9)
+      polyglot (>= 0.3.1)
+    tzinfo (0.3.26)
+    wikitext (2.1.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  RedCloth (= 4.2.7)
+  bluecloth (= 2.1.0)
+  compass (= 0.11.beta.5)
+  kramdown (= 0.13.2)
+  maruku (= 0.6.0)
+  rack-cache
+  rails (= 3.0.6)
+  rdiscount (= 1.6.8)
+  rdoc (= 3.5.3)
+  rspec-rails (= 2.5.0)
+  wikitext (= 2.1.1)

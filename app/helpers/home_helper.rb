@@ -1,4 +1,4 @@
-require "markdownr/parser"
+require 'markdownr/parser'
 
 module HomeHelper
   def parser_select default = 'rdiscount'

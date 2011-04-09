@@ -4,43 +4,43 @@ module Markdownr
   class Parser
     PARSERS = [
       {
-        :name => "Markdown",
-        :parsers => ["RDiscount", "BlueCloth", "Kramdown", "Maruku"]
+        :name => 'Markdown',
+        :parsers => ['RDiscount', 'BlueCloth', 'Kramdown', 'Maruku']
       },
       {
-        :name => "Textile",
-        :parsers => ["RedCloth"]
+        :name => 'Textile',
+        :parsers => ['RedCloth']
       },
       {
-        :name => "RDoc",
-        :parsers => ["RDoc"]
+        :name => 'RDoc',
+        :parsers => ['RDoc']
       },
       {
-        :name => "Wiki",
-        :parsers => ["Wikitext"]
+        :name => 'Wiki',
+        :parsers => ['Wikitext']
       }
     ]
     
-    def self.parse(text, parser = "markdown")
-      return "" unless text && !text.empty?
+    def self.parse(text, parser = 'markdown')
+      return '' unless text && !text.empty?
       
       # Strip evil stuff
       text = preprocess(text)
       
       # Parse!
       case parser
-      when "bluecloth"
+      when 'bluecloth'
         BlueCloth.new(text).to_html
-      when "kramdown"
+      when 'kramdown'
         Kramdown::Document.new(text).to_html
-      when "maruku"
+      when 'maruku'
         Maruku.new(text).to_html
-      when "redcloth"
+      when 'redcloth'
         RedCloth.new(text).to_html
-      when "rdoc"
-        require "rdoc/markup/to_html"
+      when 'rdoc'
+        require 'rdoc/markup/to_html'
         RDoc::Markup::ToHtml.new.convert(text)
-      when "wikitext"
+      when 'wikitext'
         Wikitext::Parser.new.parse(text)
       else
         RDiscount.new(text).to_html

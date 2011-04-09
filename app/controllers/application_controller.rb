@@ -1,4 +1,4 @@
-require "markdownr/parser"
+require 'markdownr/parser'
  
 class ApplicationController < ActionController::Base
   helper :all

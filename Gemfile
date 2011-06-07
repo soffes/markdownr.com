@@ -23,5 +23,6 @@ group :test, :development do
 end
 
 group :production do
+  gem 'thin'
   gem 'rack-cache', :require => 'rack/cache'
 end

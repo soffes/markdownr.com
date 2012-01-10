@@ -1,28 +1,44 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc1'
-gem 'compass', '0.11.1'
+gem 'rails', '3.1.3'
+gem 'thin'
+gem 'foreman'
+
+gem 'nokogiri'
+gem 'pygmentize'
 
 # Markdown
-gem 'rdiscount', '1.6.8'
-gem 'bluecloth', '2.1.0'
-gem 'kramdown', '0.13.2'
-gem 'maruku', '0.6.0'
+gem 'redcarpet', '1.17.2'
+gem 'rdiscount'
+gem 'bluecloth'
+gem 'kramdown'
+gem 'maruku'
 
 # Textile
-gem 'RedCloth', '4.2.7'
+gem 'RedCloth'
 
 # RDoc
-gem 'rdoc', '3.5.3'
+gem 'rdoc'
 
 # Wiki
-gem 'wikitext', '2.1.1'
+gem 'wikitext'
+
+group :assets do
+  gem 'compass', '~> 0.12.alpha.4'
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
+  gem 'jquery-rails'
+end
+
+group :development do
+  gem 'heroku'
+end
 
 group :test, :development do
-  gem 'rspec-rails', '2.6.1'
+  gem 'rspec-rails'
 end
 
 group :production do
-  gem 'thin', '1.2.11'
-  gem 'rack-cache', '1.0.2', :require => 'rack/cache'
+  gem 'rack-cache', :require => 'rack/cache'
 end

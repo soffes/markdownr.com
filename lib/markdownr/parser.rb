@@ -1,11 +1,11 @@
-require "digest/md5"
+require 'digest/md5'
 
 module Markdownr
   class Parser
     PARSERS = [
       {
         :name => 'Markdown',
-        :parsers => ['RDiscount', 'BlueCloth', 'Kramdown', 'Maruku']
+        :parsers => ['Redcarpet', 'RDiscount', 'BlueCloth', 'Kramdown', 'Maruku']
       },
       {
         :name => 'Textile',
@@ -29,6 +29,13 @@ module Markdownr
       
       # Parse!
       case parser
+      when 'redcarpet'
+        rc_options = [:hard_wrap, :autolink, :no_intraemphasis, :fenced_code, :gh_blockcode]
+        doc = Nokogiri::HTML(Redcarpet.new(text, *rc_options).to_html)
+        doc.search("//pre[@lang]").each do |pre|
+          pre.replace Pygmentize.process(pre.text.strip, pre[:lang].to_sym)
+        end
+        doc.css('body > *').to_s
       when 'bluecloth'
         BlueCloth.new(text).to_html
       when 'kramdown'

@@ -1,5 +1,4 @@
 $(function() {
-  
   var form = $('form#notepad_form');
   var notepad = $('textarea#notepad');
   var output = $('div#output');

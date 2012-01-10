@@ -10,22 +10,24 @@ Feel free to visit [Markdownr.com][] or to fork and improve.
 
 Here's the current line up:
 
-    # Markdown
-    gem "rdiscount", "1.6.5"
-    gem "bluecloth", "2.0.7"
-    gem "kramdown", "0.8.0"
-    gem "maruku", "0.6.0"
+``` ruby
+# Markdown
+gem "rdiscount", "1.6.5"
+gem "bluecloth", "2.0.7"
+gem "kramdown", "0.8.0"
+gem "maruku", "0.6.0"
 
-    # Textile
-    gem "RedCloth", "4.2.3"
+# Textile
+gem "RedCloth", "4.2.3"
 
-    # RDoc
-    gem "rdoc", "2.5.8"
+# RDoc
+gem "rdoc", "2.5.8"
 
-    # Wiki
-    gem "wikitext", "2.0"
+# Wiki
+gem "wikitext", "2.0"
+```
 
-There are obviously a ton of markdown parser. I ran some benchmarks based on [this script](http://deveiate.org/projects/BlueCloth/browser/experiments/benchmark.rb) and took away a few.
+There are obviously a ton of markdown parsers. I ran some benchmarks based on [this script](http://deveiate.org/projects/BlueCloth/browser/experiments/benchmark.rb) and took away a few.
 
 ## Thanks
 

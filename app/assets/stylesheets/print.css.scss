@@ -1,4 +1,7 @@
-@import "compass/reset";
+/*
+ *= require normalize
+*/
+
 @import "shared";
 
 div#input, textarea#html-output, div#loading, a#toggle-output, div#copyright {

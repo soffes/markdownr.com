@@ -42,10 +42,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.2.0)
-    compass (0.12.alpha.4)
-      chunky_png (~> 1.2)
-      fssm (>= 0.2.7)
-      sass (~> 3.1)
     daemons (1.1.5)
     diff-lcs (1.1.3)
     erubis (2.7.0)
@@ -163,7 +159,6 @@ DEPENDENCIES
   RedCloth
   bluecloth
   coffee-rails
-  compass (~> 0.12.alpha.4)
   foreman
   heroku
   jquery-rails

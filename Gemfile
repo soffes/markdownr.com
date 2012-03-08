@@ -24,7 +24,6 @@ gem 'rdoc'
 gem 'wikitext'
 
 group :assets do
-  gem 'compass', '~> 0.12.alpha.4'
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'uglifier'

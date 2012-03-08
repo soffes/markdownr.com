@@ -1,10 +1,10 @@
 <div id="input">
-  <form action="<%= process_markdown_url %>" id="notepad_form" method="post">
-    <textarea id="notepad" name="text"><%= @default_raw %></textarea>
+  <%= form_tag process_markdown_url, :method => :post, :id => 'notepad_form' do %>
+    <%= text_area_tag 'notepad', @default_raw, :name => 'text' %>
     <span id="parser-container">Use <%= parser_select @default_parser %></span>
-  </form>
+  <% end %>
 </div>
 <div id="output" class="markdown"><%= raw(@default_html) %></div>
-<textarea id="html-output"><%= @default_html %></textarea>
+<%= text_area_tag 'html-output', @default_html %>
 <div id="loading"></div>
 <a id="toggle-output" href="javascript:;">Show HTML</a>

@@ -1,7 +1,7 @@
 require 'markdownr/parser'
 
 module PagesHelper
-  def parser_select default = 'rdiscount'
+  def parser_select(default = 'rdiscount')
     html = '<select id="parser" name="parser">'
     Markdownr::Parser::PARSERS.each do |group|
       html << "<optgroup label=\"#{group[:name]}\">"

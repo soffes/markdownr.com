@@ -40,6 +40,7 @@ group :test, :development do
 end
 
 group :production do
+  gem 'rack-google-analytics', :require => 'rack/google-analytics'
   gem 'rack-cache', :require => 'rack/cache'
   gem 'therubyracer'
 end

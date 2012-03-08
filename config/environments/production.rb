@@ -39,4 +39,7 @@ Markdownr::Application.configure do
 
   # Enable threaded mode
   # config.threadsafe!
+
+  # Enable Google Analytics tracking
+  config.middleware.use Rack::GoogleAnalytics, :tracker => 'UA-5609322-6'
 end

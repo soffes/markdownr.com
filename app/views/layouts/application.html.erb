@@ -6,6 +6,8 @@
 <%= stylesheet_link_tag 'application' %>
 <%= stylesheet_link_tag 'print', :media => 'print' %>
 <%= google_analytics 'UA-5609322-6' %>
+<%= javascript_include_tag 'application' %>
+
 </head>
 
 <body>
@@ -19,8 +21,5 @@
       <a class="about" href="http://github.com/samsoffes/markdownr.com/blob/master/Readme.markdown" rel="external nofollow">About Markdownr.com</a>
     </div>
   </div>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script>if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/assets/jquery-1.7.1.min.js'%3E%3C/script%3E"));}</script>
-  <%= javascript_include_tag 'application' %>
 </body>
 </html>

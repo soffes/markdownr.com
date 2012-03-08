@@ -1,3 +1,5 @@
+//= require jquery
+
 $ ->
   form = $('form#notepad_form')
   notepad = $('textarea#notepad')

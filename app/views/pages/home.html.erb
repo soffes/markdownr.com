@@ -4,7 +4,7 @@
     <span id="parser-container">Use <%= parser_select @default_parser %></span>
   <% end %>
 </div>
-<div id="output" class="markdown"><%= raw(@default_html) %></div>
+<div id="output" class="markdown"><%== @default_html %></div>
 <%= text_area_tag 'html-output', @default_html %>
 <div id="loading"></div>
-<a id="toggle-output" href="javascript:;">Show HTML</a>
+<%= link_to 'Show HTML', '', :id => 'toggle-output' %>

@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-<title>Markdownr</title>
-<%= stylesheet_link_tag 'application' %>
-<%= stylesheet_link_tag 'print', :media => 'print' %>
-<%= javascript_include_tag 'application' %>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>Markdownr</title>
+    <%= stylesheet_link_tag 'application' %>
+    <%= stylesheet_link_tag 'print', :media => 'print' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
 
-</head>
-
-<body>
-  <div id="content" class="clear">
-    <%= yield %>
-  </div>
-  <div id="copyright">
-    &copy; 2011 <a href="http://samsoff.es/">Sam Soffes</a>.
-    <a href="http://github.com/samsoffes/markdownr.com" rel="external nofollow">View source on GitHub</a>.
-    <div>
-      <a class="about" href="http://github.com/samsoffes/markdownr.com/blob/master/Readme.markdown" rel="external nofollow">About Markdownr.com</a>
+  <body>
+    <div id="content" class="clear">
+      <%= yield %>
     </div>
-  </div>
-</body>
+    <div id="copyright">
+      &copy; 2011 <%= link_to 'Sam Soffes', 'http://samsoff.es/' %>.
+      <%= link_to 'View source on GitHub', 'http://github.com/samsoffes/markdownr.com', :rel => 'external nofollow' %>
+      <div>
+        <%= link_to 'About Markdownr.com', 'http://github.com/samsoffes/markdownr.com/blob/master/Readme.markdown', :rel => 'external nofollow', :class => 'about' %>
+      </div>
+    </div>
+  </body>
 </html>

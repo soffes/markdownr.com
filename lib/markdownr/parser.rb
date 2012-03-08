@@ -80,7 +80,7 @@ module Markdownr
 
       # Prevent foo_bar_baz from ending up with an italic word in the middle
       text.gsub!(/(^(?! {4}|\t)\w+_\w+_\w[\w_]*)/) do |match|
-        match.gsub('_', '\_') if match.split('').sort.to_s[0..1] == '__'
+        match.gsub('_', '\_') if match.split('').sort.join[0..1] == '__'
       end
 
       # In very clear cases, let newlines become <br /> tags

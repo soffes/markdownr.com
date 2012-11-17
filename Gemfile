@@ -12,7 +12,10 @@ gem 'redcarpet', '1.17.2'
 gem 'rdiscount'
 gem 'bluecloth'
 gem 'kramdown'
+
 gem 'maruku'
+# For MathML support in maruku
+gem 'ritex'
 
 # Textile
 gem 'RedCloth'

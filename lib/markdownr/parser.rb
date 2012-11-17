@@ -1,4 +1,5 @@
 require 'digest/md5'
+require 'maruku/ext/math'
 
 module Markdownr
   class Parser
@@ -41,6 +42,7 @@ module Markdownr
       when 'kramdown'
         Kramdown::Document.new(text).to_html
       when 'maruku'
+        Maruku::Globals[:html_math_engine] = 'ritex'
         Maruku.new(text).to_html
       when 'redcloth'
         RedCloth.new(text).to_html

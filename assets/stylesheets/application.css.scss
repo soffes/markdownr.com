@@ -1,4 +1,4 @@
-@import "compass/reset";
+@import "reset";
 @import "shared";
 
 // Clear
@@ -28,7 +28,7 @@ body, input, textarea {
 a {
   color: $linkColor;
   text-decoration: none;
-  
+
   &:hover {
     text-decoration: underline
   }
@@ -40,15 +40,15 @@ div#copyright {
   margin: 40px auto 30px;
   color: #aaa;
   font-size: 0.85em;
-  
+
   a {
     color: #aaa;
-    
+
     &:hover {
       color: $linkColor;
     }
   }
-  
+
   div {
     float: right;
   }
@@ -60,16 +60,16 @@ div#content {
   height: 400px;
   margin: 50px auto 0;
   position: relative;
-  
+
   > div {
     float: left;
   }
-  
+
   div#input {
     width: 300px;
     margin-right: 40px;
   }
-  
+
   div#output, textarea {
     width: 288px;
     height: 390px;
@@ -78,13 +78,13 @@ div#content {
     padding: 5px;
     overflow-y: auto;
   }
-  
+
   textarea {
     font-family: Monaco, "Courier New", Courier, monospace;
     font-size: 0.9em;
     resize: none;
   }
-  
+
   textarea#html-output {
     display: none;
   }

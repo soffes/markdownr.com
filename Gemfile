@@ -1,45 +1,35 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-gem 'rails', '3.1.3'
-gem 'thin'
-gem 'foreman'
+ruby '2.0.0'
 
-gem 'nokogiri'
-gem 'pygmentize'
+# Simple routing
+gem 'sinatra'
 
-# Markdown
-gem 'redcarpet', '1.17.2'
-gem 'rdiscount'
-gem 'bluecloth'
-gem 'kramdown'
-gem 'maruku'
+# Web server
+gem 'puma'
 
-# Textile
-gem 'RedCloth'
+# Use the right host
+gem 'rack-canonical-host'
 
-# RDoc
-gem 'rdoc'
+# Markdown -> HTML
+gem 'redcarpet'
 
-# Wiki
-gem 'wikitext'
+# HTML -> Markdown
+gem 'unmarkdown'
 
-group :assets do
-  gem 'compass', '~> 0.12.alpha.4'
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'uglifier'
-  gem 'jquery-rails'
-end
+# Code coloring
+gem 'pygments.rb', require: false
+
+# Stylesheets
+gem 'sprockets'
+gem 'sprockets-sass'
+gem 'sass'
+
+# Javascript
+gem 'coffee-script'
+gem 'uglifier'
 
 group :development do
-  gem 'heroku'
-end
-
-group :test, :development do
-  gem 'rspec-rails'
-end
-
-group :production do
-  gem 'rack-cache', :require => 'rack/cache'
-  gem 'therubyracer'
+  # Reloading in development
+  gem 'shotgun'
 end

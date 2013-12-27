@@ -1,4 +1,4 @@
-@import "compass/reset";
+@import "reset";
 @import "shared";
 
 div#input, textarea#html-output, div#loading, a#toggle-output, div#copyright {
@@ -25,7 +25,7 @@ div#markdown-output {
   border: 0;
   overflow: hidden;
   @include markdown_style;
-  
+
   pre {
     overflow: hidden;
   }

@@ -12,6 +12,12 @@ module Markdownr
     end
 
     post '/api/v2/convert' do
+      body = request.body.read
+      unless body && body.length > 0
+        status 400
+        return 'You must post content to be converted.'
+      end
+
       # I couldn't figure out the built-in accept stuff, so here we go.
       accepts = env['HTTP_ACCEPT'].split(',').map do |item|
         item = item.strip.sub(/^(.*)(;.+)$/, "\1")
@@ -26,7 +32,7 @@ module Markdownr
         end
 
         headers 'Content-Type' => 'text/x-markdown; charset=utf8'
-        return unmarkdown(request.body.read)
+        return unmarkdown(body)
       end
 
       # Markdown -> HTML
@@ -37,7 +43,7 @@ module Markdownr
         end
 
         headers 'Content-Type' => 'text/html; charset=utf8'
-        return markdown(request.body.read)
+        return markdown(body)
       end
 
       status 406

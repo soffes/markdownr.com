@@ -1,3 +1,4 @@
+require 'redcarpet'
 require 'pygments.rb'
 
 module Markdownr

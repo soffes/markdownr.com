@@ -1,3 +1,5 @@
+require 'sinatra'
+
 module Markdownr
   class Application < Sinatra::Application
     include Parsing
@@ -10,21 +12,36 @@ module Markdownr
     end
 
     post '/api/v2/convert' do
-      # Markdown -> HTML
-      if request.accept? 'text/html'
-        headers 'Content-Type' => 'text/html; charset=utf8'
-        return markdown(request.body)
+      # I couldn't figure out the built-in accept stuff, so here we go.
+      accepts = env['HTTP_ACCEPT'].split(',').map do |item|
+        item = item.strip.sub(/^(.*)(;.+)$/, "\1")
       end
+      content_type = env['CONTENT_TYPE']
 
       # HTML -> Markdown
-      if request.accept? 'text/x-markdown'
+      if accepts.include?('text/x-markdown')
+        unless content_type.include?('text/html')
+          status 400
+          return 'You must post `text/html` when accepting `text/x-markdown`.'
+        end
+
         headers 'Content-Type' => 'text/x-markdown; charset=utf8'
-        return unmarkdown(request.body)
+        return unmarkdown(request.body.read)
       end
 
-      # Bad request
-      status 400
-      '400 Bad request'
+      # Markdown -> HTML
+      if accepts.include?('text/html')
+        unless content_type.include?('text/x-markdown')
+          status 400
+          return 'You must post `text/x-markdown` when accepting `text/html`.'
+        end
+
+        headers 'Content-Type' => 'text/html; charset=utf8'
+        return markdown(request.body.read)
+      end
+
+      status 406
+      'You must explicitly accept `text/x-markdown` or `text/html`.'
     end
   end
 end

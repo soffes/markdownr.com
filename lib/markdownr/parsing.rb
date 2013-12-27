@@ -1,3 +1,6 @@
+require 'redcarpet'
+require 'unmarkdown'
+
 module Markdownr
   module Parsing
     module_function

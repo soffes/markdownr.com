@@ -12,10 +12,10 @@ gem 'puma'
 gem 'rack-canonical-host'
 
 # Markdown -> HTML
-gem 'redcarpet'
+gem 'redcarpet', require: false
 
 # HTML -> Markdown
-gem 'unmarkdown'
+gem 'unmarkdown', require: false
 
 # Code coloring
 gem 'pygments.rb', require: false
@@ -29,7 +29,16 @@ gem 'sass'
 gem 'coffee-script'
 gem 'uglifier'
 
+# Utilities
+gem 'rake'
+
 group :development do
   # Reloading in development
   gem 'shotgun'
+end
+
+group :test do
+  gem 'minitest'
+  gem 'minitest-rg'
+  gem 'rack-test'
 end

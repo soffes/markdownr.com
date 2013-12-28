@@ -5,35 +5,34 @@ $ ->
   html_output = $('textarea#html-output')
   toggle_output = $('a#toggle-output')
   loading = $('div#loading')
-  parser_select = $('select#parser')
-  
-  cached_input = notepad.val();
+
+  last_markdown = notepad.val();
   show_html = false;
-  
+
   # Process markdown
   process = ->
-    return if notepad.val() == cached_input
+    markdown = notepad.val()
+    return if markdown == last_markdown
     loading.show()
-    pre_cache = notepad.val()
-    $.post form.attr('action'), form.serialize(), (data, textStatus) ->
+    jQuery.ajax(
+      url: form.attr('action')
+      data: markdown
+      type: 'POST'
+      headers:
+        'Content-Type': 'text/x-markdown'
+        'Accept': 'text/html'
+      dataType: 'html'
+    ).done (data) ->
       output.html(data)
       html_output.val(data)
       loading.hide()
-      cached_input = pre_cache
-  
-  # Parser change
-  parser_change = ->
-    # TODO: update default if it is still the default text
-    cached_input = ''
-    
-    # Reprocess
-    process()
-  
+      last_markdown = markdown
+
   # Toggle output
   toggle = (e) ->
     e.preventDefault()
     show_html = !show_html
-    
+
     if show_html
       toggle_output.html('Hide HTML')
       output.hide()
@@ -42,13 +41,10 @@ $ ->
       toggle_output.html('Show HTML')
       output.show()
       html_output.hide()
-  
+
   # Add event for keyup and focus
   notepad.keyup(process)
   notepad.focus()
-  
-  # Add event for parser change
-  parser_select.change(parser_change)
-  
+
   # Add event for toggle link
   toggle_output.click(toggle)

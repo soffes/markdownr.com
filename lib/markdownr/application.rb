@@ -7,10 +7,17 @@ module Markdownr
     DEFAULT_MARKDOWN = "Welcome to [Markdownr.com](http://markdownr.com). We hope you **really** enjoy using this.\n\nJust type some [markdown](http://daringfireball.net/projects/markdown) on the left and see it on the right. *Simple as that.*".freeze
     DEFAULT_HTML = Parsing.markdown(DEFAULT_MARKDOWN).freeze
 
+    # Homepage
     get '/' do
       erb :home
     end
 
+    # API Docs
+    get '/api/?' do
+      erb :api
+    end
+
+    # API
     post '/api/v2/convert' do
       body = request.body.read
       unless body && body.length > 0

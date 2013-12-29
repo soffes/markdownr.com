@@ -1,0 +1,37 @@
+<section id="api">
+  <h1><a href="/" rel="home">Markdownr</a></h1>
+  <h2>API</h2>
+  <p>The Markdownr API is very simple. There is only one endpoint. You can convert HTML to Markdown and vice versa with it.</p>
+
+  <h3>Markdown to HTML</h3>
+  <h4>Request</h4>
+<pre>POST /api/v2/convert HTTP/1.1
+Accept: text/html
+Content-Type: text/x-markdown
+
+This is some **markdown**.
+</pre>
+
+  <h4>Response</h4>
+<pre>HTTP/1.1 200 OK
+Content-Type: text/html;charset=utf-8
+
+&lt;p&gt;This is some &lt;strong&gt;markdown&lt;/strong&gt;.&lt;/p&gt;
+</pre>
+
+  <h3>HTML to Markdown</h3>
+  <h4>Request</h4>
+<pre>POST /api/v2/convert HTTP/1.1
+Accept: text/x-markdown
+Content-Type: text/html
+
+&lt;p&gt;This is some &lt;strong&gt;HTML&lt;/strong&gt;.&lt;/p&gt;
+</pre>
+
+  <h4>Response</h4>
+<pre>HTTP/1.1 200 OK
+Content-Type: text/x-markdown;charset=utf-8
+
+This is some **HTML**.
+</pre>
+</section>

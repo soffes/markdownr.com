@@ -52,12 +52,15 @@ div#copyright {
   div {
     float: right;
   }
+
+  div:last-child a {
+    margin-left: 0.5em;
+  }
 }
 
 // Home
 div#content {
   width: 640px;
-  height: 400px;
   margin: 50px auto 0;
   position: relative;
 
@@ -117,8 +120,12 @@ a#toggle-output {
 }
 
 // Markdown
-.markdown {
+section, .markdown {
   @include markdown_style;
 }
 
 @import "syntax";
+
+h1 a {
+  text-decoration: none;
+}

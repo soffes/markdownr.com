@@ -16,7 +16,7 @@ GEM
       minitest (~> 5.0)
     multi_json (1.13.1)
     mustermann (1.0.3)
-    nokogiri (1.9.1)
+    nokogiri (1.10.5)
       mini_portile2 (~> 2.4.0)
     public_suffix (3.0.3)
     puma (3.12.0)

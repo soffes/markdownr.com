@@ -20,15 +20,6 @@ gem 'unmarkdown', require: false
 # Code coloring
 gem 'pygments.rb', require: false
 
-# Stylesheets
-gem 'sprockets'
-gem 'sprockets-sass'
-gem 'sass'
-
-# Javascript
-gem 'coffee-script'
-gem 'uglifier'
-
 # Utilities
 gem 'rake'
 

@@ -1,0 +1,239 @@
+/* Variables */
+:root {
+  --font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  --link-color: #2e80d3;
+}
+
+/* Reset */
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+/* Clear */
+.clear:after {
+  clear: both;
+  content: " ";
+  display: block;
+  height: 0;
+  zoom: 1;
+}
+
+/* General */
+html, body {
+  background: #ededed;
+}
+
+body {
+  font-size: 15px;
+  line-height: 1.4em;
+}
+
+body, input, textarea {
+  font-family: var(--font-family);
+  color: #333;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline
+}
+
+h1 a, .markdown h1 a {
+  text-decoration: none;
+}
+
+div#copyright {
+  width: 640px;
+  margin: 40px auto 30px;
+  color: #aaa;
+  font-size: 0.85em;
+}
+
+div#copyright a {
+    color: #aaa;
+}
+
+div#copyright a:hover {
+  color: var(--link-color);
+}
+
+div#copyright div {
+  float: right;
+}
+
+div#copyright div:last-child a {
+  margin-left: 0.5em;
+}
+
+/* Home */
+div#content {
+  width: 640px;
+  margin: 50px auto 0;
+  position: relative;
+}
+
+div#content > div {
+  float: left;
+}
+
+div#content div#input {
+  width: 300px;
+  margin-right: 40px;
+}
+
+div#content div#output, div#content textarea {
+  width: 288px;
+  height: 390px;
+  border: 1px solid #999;
+  background: #fff;
+  padding: 5px;
+  overflow-y: auto;
+}
+
+div#content textarea {
+  font-family: Monaco, "Courier New", Courier, monospace;
+  font-size: 0.9em;
+  resize: none;
+}
+
+textarea#html-output {
+  display: none;
+}
+
+span#parser-container {
+  position: absolute;
+  bottom: -32px;
+  left: -2px;
+  color: #444;
+  font-size: 0.8em;
+}
+
+div#loading {
+  display: none;
+  width: 21px;
+  height: 5px;
+  background: url('/images/dots-white.gif') no-repeat;
+  position: absolute;
+  bottom: -23px;
+  left: 340px;
+  -webkit-transition: all 0.1s linear;
+}
+
+a#toggle-output {
+  font-size: 0.8em;
+  position: absolute;
+  bottom: -27px;
+  right: 0;
+}
+
+/* Markdown */
+.markdown * {
+  line-height: 1.4em; }
+
+.markdown mark {
+  background-color: #fffeca;
+  padding: 0 0.08em; }
+
+.markdown em, .markdown i {
+  font-style: italic; }
+
+.markdown strong, .markdown b {
+  font-weight: bold; }
+
+.markdown abbr {
+  border-bottom: 1px dashed;
+  cursor: help; }
+
+.markdown small {
+  font-size: 0.8em; }
+
+.markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
+  margin-bottom: 0.5em; }
+
+.markdown h1 {
+  font-size: 170%;
+  font-weight: bold; }
+
+.markdown h2 {
+  font-size: 150%;
+  font-weight: bold; }
+
+.markdown h3 {
+  color: #555;
+  font-size: 110%;
+  font-weight: bold; }
+
+.markdown h4 {
+  color: #777;
+  font-weight: bold; }
+
+.markdown h5 {
+  color: #777; }
+
+.markdown h6 {
+  color: #777;
+  font-size: 90%; }
+
+.markdown a {
+  text-decoration: underline; }
+
+.markdown p {
+  line-height: 1.3em;
+  margin: 0 0 1em; }
+
+.markdown ul ul, .markdown ol ol {
+  margin-bottom: 0;
+  margin-top: 0; }
+
+.markdown ul, .markdown ol {
+  margin: 0 0 2em 0.5em; }
+  .markdown ul li, .markdown ol li {
+    margin-left: 1em; }
+
+.markdown ul li {
+  list-style: disc; }
+
+.markdown ol li {
+  list-style: decimal; }
+
+.markdown blockquote {
+  border-left: 5px solid #ddd;
+  color: #999;
+  margin: 0 0 1em;
+  padding-left: 0.6em; }
+
+.markdown dt {
+  font-weight: bold;
+  margin-left: 1em; }
+
+.markdown dd {
+  margin-bottom: 1em;
+  margin-left: 2em; }
+
+.markdown table {
+  margin: 0 0 1em;
+  width: 100%; }
+  .markdown table th {
+    background: #eee;
+    border-bottom: 1px solid #bbb;
+    padding: 0.2em 1em; }
+  .markdown table td {
+    border-bottom: 1px solid #ddd;
+    padding: 0.2em 1em; }
+
+.markdown pre {
+  color: #444;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9em;
+  line-height: 1.3em;
+  margin: 0 0 1em;
+  overflow: auto; }
+
+.markdown code {
+  color: #444;
+  font-family: 'Courier New', Courier, monospace; }
+
+/* Syntax */
+.highlight{background:#fff}.highlight .c{color:#998;font-style:italic}.highlight .err{color:#a61717;background-color:#e3d2d2}.highlight .k,.highlight .kc,.highlight .kd,.highlight .kp,.highlight .kr,.highlight .o{font-weight:700}.highlight .c1,.highlight .cm{color:#998;font-style:italic}.highlight .cp{color:#999;font-weight:700}.highlight .cs{color:#999;font-weight:700;font-style:italic}.highlight .gd{color:#000;background-color:#fdd}.highlight .gd .x{color:#000;background-color:#faa}.highlight .ge{font-style:italic}.highlight .gr,.highlight .gt{color:#a00}.highlight .bp,.highlight .gh{color:#999}.highlight .gi{color:#000;background-color:#dfd}.highlight .gi .x{color:#000;background-color:#afa}.highlight .go{color:#888}.highlight .gp,.highlight .nn{color:#555}.highlight .gs{font-weight:700}.highlight .gu{color:#aaa}.highlight .kt{color:#458;font-weight:700}.highlight .m{color:#099}.highlight .s{color:#d14}.highlight .nb{color:#0086b3}.highlight .nc{color:#458;font-weight:700}.highlight .ni{color:purple}.highlight .ne,.highlight .nf{color:#900;font-weight:700}.highlight .nt{color:navy}.highlight .ow{font-weight:700}.highlight .w{color:#bbb}.highlight .il,.highlight .mf,.highlight .mh,.highlight .mi,.highlight .mo{color:#099}.highlight .s2,.highlight .sb,.highlight .sc,.highlight .sd,.highlight .se,.highlight .sh,.highlight .si,.highlight .sx{color:#d14}.highlight .sr{color:#009926}.highlight .s1{color:#d14}.highlight .ss{color:#990073}.highlight .na,.highlight .no,.highlight .nv,.highlight .vc,.highlight .vg,.highlight .vi{color:teal}

@@ -1,6 +1,3 @@
-@import "reset";
-@import "shared";
-
 div#input, textarea#html-output, div#loading, a#toggle-output, div#copyright {
   display: none;
 }
@@ -14,7 +11,7 @@ html, body, div#content, div#content div#markdown-output {
 }
 
 body {
-  font-family: $HelveticaNeue;
+  font-family: var(--font-family);
   line-height: 1.4em;
 }
 
@@ -24,9 +21,8 @@ div#markdown-output {
   padding: 0;
   border: 0;
   overflow: hidden;
-  @include markdown_style;
+}
 
-  pre {
-    overflow: hidden;
-  }
+div#markdown-output pre {
+  overflow: hidden;
 }
